@@ -1,0 +1,1 @@
+select * from dev_Db.dev_schema.emp where deptno=10
