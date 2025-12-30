@@ -1,1 +1,1 @@
-select * from dev_Db.dev_schema.emp where deptno=10
+select * from dev_Db.cust_schema.emp where deptno=10
