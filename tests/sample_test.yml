@@ -1,0 +1,22 @@
+models:
+  - name: cust_new
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+  - name: orders_new
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique          
+      - name: customer_id
+        tests:
+          - relationships:
+              field: (customer_id)
+              to: ref('cust_new')
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['completed','return_pending','placed','shipped','returned']

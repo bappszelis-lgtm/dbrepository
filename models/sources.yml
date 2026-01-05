@@ -6,3 +6,9 @@ sources:
       - name: customers
       - name: payment
       - name: orders
+      - name: t_customers
+      - name: t_nation    
+      - name: t_ticket_info        
+      - name: emp       
+      - name: t_audit_log      
+              

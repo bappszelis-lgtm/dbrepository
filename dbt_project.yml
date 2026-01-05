@@ -37,6 +37,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   my_new_project:
-    # Applies to all files under models/example/
     example:
       +materialized: table
+
+      +pre-hook:
+        - "insert into dev_Db.dev_Schema.t_audit_log (audit_type, model_name) values ('start', '{{ this }}')"
+
+      +post-hook:
+        - "insert into dev_Db.dev_Schema.t_audit_log (audit_type, model_name) values ('end', '{{ this }}')"
